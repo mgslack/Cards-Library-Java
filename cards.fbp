@@ -1,0 +1,4 @@
+<Project projectName="cards">
+  <Jar>.\cards.jar</Jar>
+  <SrcDir>.\src</SrcDir>
+</Project>

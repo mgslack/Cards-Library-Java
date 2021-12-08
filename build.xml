@@ -1,0 +1,98 @@
+<?xml version="1.0" standalone="yes"?>
+
+<project name="Cards" default="dist" basedir=".">
+  <description>Cards Library Ant Build Script</description>
+
+  <!-- dependant jar location -->
+  <property name="lib" value="lib"/>
+
+  <!-- java source (other files for program) location -->
+  <property name="src" value="src"/>
+
+  <!-- location to store compiled classes -->
+  <property name="build" value="build"/>
+
+  <!-- location to build loader distribution jar -->
+  <property name="dist" value="dist"/>
+
+  <!-- name of the distribution jar -->
+  <property name="jarname" value="cards"/>
+
+  <!-- javadoc destination location -->
+  <property name="docs" value="docs"/>
+
+  <!-- setup the classpath dependancies needed -->
+  <path id="lib.path">
+    <fileset dir="${lib}">
+      <include name="**/*.jar"/>
+      <include name="**/*.zip"/>
+    </fileset>
+  </path>
+
+  <!-- include in system environment -->
+  <property environment="env"/>
+
+  <!-- = = = = = = = = = = tasks = = = = = = = = = = -->
+
+  <!-- initialize build / globals -->
+  <target name="init" description="Initialize for all targets">
+    <tstamp>
+      <format property="CUR_YEAR" pattern="yyyy"/>
+    </tstamp>
+  </target>
+
+  <!-- compile the source into the 'build' location -->
+  <target name="compile" description="Compile Card library sources" depends="init">
+    <mkdir dir="${build}"/>
+	<!-- removed: source="1.3" target="1.3" -->
+    <javac destdir="${build}" srcdir="${src}" classpathref="lib.path" nowarn="true" includeAntRuntime="false"/>
+  </target>
+
+  <!-- create jar, include in other files from source tree also -->
+  <target name="dist" description="Build Card library distribution (jar)" depends="compile">
+    <mkdir dir="${dist}/lib"/>
+    <copy file="${basedir}/license.txt" todir="${build}" overwrite="true"/>
+    <jar destfile="${dist}/lib/${jarname}.jar"
+         manifest="${basedir}/manifest.txt"
+         basedir="${build}"/>
+    <zip destfile="${dist}/lib/${jarname}.jar"
+         update="true"
+         includes="**/*.properties,**/*.gif"
+         basedir="${basedir}/${src}"/>
+    <copy file="${dist}/lib/${jarname}.jar" todir="${basedir}" overwrite="true"/>
+  </target>
+
+  <!-- remove build folders created during the build -->
+  <target name="clean" description="Cleanup build environment">
+    <delete dir="${build}"/>
+    <delete dir="${dist}"/>
+  </target>
+
+  <!-- run build, then do cleanup of build artifacts -->
+  <target name="buildclean" description="Build, then clean up">
+    <antcall target="dist"/>
+    <antcall target="clean"/>
+  </target>
+
+  <!-- create documentation from source -->
+  <target name="docs" description="Create Card library javadocs" depends="init">
+    <delete dir="${docs}"/>
+    <mkdir dir="${docs}"/>
+    <javadoc destdir="${docs}"
+             version="true"
+             windowtitle="Cards API"
+             doctitle="&lt;b&gt;Cards Documentation&lt;/b&gt;"
+             bottom="&lt;i&gt;Cards API - (c) 2001-${CUR_YEAR} Slack &amp; Associates/M.G.Slack&lt;/i&gt;"
+             author="true"
+             sourcepath="${src}"
+             classpathref="lib.path">
+      <tag name="created" enabled="true" scope="types" description="Created:"/>
+      <!-- following only works with ant v1.6+ (to order tags in javadoc) -->
+      <tag name="version"/>
+      <tag name="author"/>
+      <tag name="see"/>
+      <packageset dir="${src}"/>
+    </javadoc>
+  </target>
+
+</project>
