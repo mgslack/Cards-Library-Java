@@ -16,11 +16,13 @@ import com.slackandassociates.cards.*;
  * <li> 2004-08-19 - Modified to use the CardEnum interface.
  * <li> 2005-05-04 - Added additional card back and card symbol (blank card).
  * <li> 2007-10-14 - Added additional card back.
+ * <li> 2021-12-22 - Added additional placeholders from C# library (club, diamond,
+ *                   heart and spade).  Updated some of the documentation comments.
  * </ul>
  * @author Michael G. Slack
  * @author slack@attglobal.net
  * @created 2001-08-09
- * @version Version 2.02 2007-10-14
+ * @version Version 2.03 2021-12-22
 */
 public class PlayingCardEnum implements CardEnum
 {
@@ -136,31 +138,39 @@ public class PlayingCardEnum implements CardEnum
     /** Card value - king of spades */
     public static final CardEnum KING_OF_SPADES = new PlayingCardEnum(52);
 
-    // card image values (backs / place graphics)
-    /** Card value (first card back image value). */
+    // card image values (backs / placeholder graphics)
+    /** Card value (first card back image value - spheres). */
     public static final CardEnum JC_CARDBACK_VAL1 = new PlayingCardEnum(200);
-    /** Card value (second card back image value). */
+    /** Card value (second card back image value - blue). */
     public static final CardEnum JC_CARDBACK_VAL2 = new PlayingCardEnum(201);
-    /** Card value (third card back image value). */
+    /** Card value (third card back image value - red). */
     public static final CardEnum JC_CARDBACK_VAL3 = new PlayingCardEnum(202);
-    /** Card value (forth card back image value). */
+    /** Card value (forth card back image value - mountains). */
     public static final CardEnum JC_CARDBACK_VAL4 = new PlayingCardEnum(203);
-    /** Card value (fifth card back image value). */
+    /** Card value (fifth card back image value - purple and gray). */
     public static final CardEnum JC_CARDBACK_VAL5 = new PlayingCardEnum(204);
-    /** Card value (sixth card back image value). */
+    /** Card value (sixth card back image value - music). */
     public static final CardEnum JC_CARDBACK_VAL6 = new PlayingCardEnum(205);
-    /** Card value (seventh card back image value). */
+    /** Card value (seventh card back image value - Beany). */
     public static final CardEnum JC_CARDBACK_VAL7 = new PlayingCardEnum(206);
-    /** Card value (eighth card back image value). */
+    /** Card value (eighth card back image value - Java Duke). */
     public static final CardEnum JC_CARDBACK_VAL8 = new PlayingCardEnum(207);
-    /** Card value (first card placement/symbol image value). */
+    /** Card value (first card placement/symbol image value - red X). */
     public static final CardEnum JC_CARDSYMBOL_VAL1 = new PlayingCardEnum(300);
-    /** Card value (second card placement/symbol image value). */
+    /** Card value (second card placement/symbol image value - green circle). */
     public static final CardEnum JC_CARDSYMBOL_VAL2 = new PlayingCardEnum(301);
-    /** Card value (third card placement/symbol image value). */
+    /** Card value (third card placement/symbol image value - gray). */
     public static final CardEnum JC_CARDSYMBOL_VAL3 = new PlayingCardEnum(302);
     /** Card value (forth card placement/symbol image value - blank). */
     public static final CardEnum JC_CARDSYMBOL_VAL4 = new PlayingCardEnum(303);
+	/** Card value (forth card placement/symbol image value - club). */
+    public static final CardEnum JC_CARDSYMBOL_VAL5 = new PlayingCardEnum(304);
+	/** Card value (forth card placement/symbol image value - diamond). */
+    public static final CardEnum JC_CARDSYMBOL_VAL6 = new PlayingCardEnum(305);
+	/** Card value (forth card placement/symbol image value - heart). */
+    public static final CardEnum JC_CARDSYMBOL_VAL7 = new PlayingCardEnum(306);
+	/** Card value (forth card placement/symbol image value - spade). */
+    public static final CardEnum JC_CARDSYMBOL_VAL8 = new PlayingCardEnum(307);
 
     // joker values
     /** Card value of the red joker. */
