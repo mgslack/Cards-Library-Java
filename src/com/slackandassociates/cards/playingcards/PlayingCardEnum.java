@@ -18,11 +18,13 @@ import com.slackandassociates.cards.*;
  * <li> 2007-10-14 - Added additional card back.
  * <li> 2021-12-22 - Added additional placeholders from C# library (club, diamond,
  *                   heart and spade).  Updated some of the documentation comments.
+ * <li> 2021-12-25 - Didn't update toString method with last additions for cardbacks
+ *                   (2007!) and recently added placeholders.
  * </ul>
  * @author Michael G. Slack
  * @author slack@attglobal.net
  * @created 2001-08-09
- * @version Version 2.03 2021-12-22
+ * @version Version 2.04 2021-12-22
 */
 public class PlayingCardEnum implements CardEnum
 {
@@ -214,10 +216,10 @@ public class PlayingCardEnum implements CardEnum
         String sRet = "Not a valid card/No card";
 
         if ((iValue >= JC_CARDBACK_VAL1.getValue()) &&
-            (iValue <= JC_CARDBACK_VAL7.getValue()))
+            (iValue <= JC_CARDBACK_VAL8.getValue()))
             sRet = "Card back (" + iValue + ")";
         else if ((iValue >= JC_CARDSYMBOL_VAL1.getValue()) &&
-                 (iValue <= JC_CARDSYMBOL_VAL4.getValue()))
+                 (iValue <= JC_CARDSYMBOL_VAL8.getValue()))
             sRet = "Card symbol/place holder (" + iValue + ")";
         else if (iValue == RED_JOKER.getValue())
             sRet = "Red Joker";
