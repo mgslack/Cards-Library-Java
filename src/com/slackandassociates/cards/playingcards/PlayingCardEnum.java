@@ -20,6 +20,8 @@ import com.slackandassociates.cards.*;
  *                   heart and spade).  Updated some of the documentation comments.
  * <li> 2021-12-25 - Didn't update toString method with last additions for cardbacks
  *                   (2007!) and recently added placeholders.
+ * <li> 2022-01-25 - Documentation on new placeholders needed to be updated (copy and
+ *                   paste errors).
  * </ul>
  * @author Michael G. Slack
  * @author slack@attglobal.net
@@ -165,13 +167,13 @@ public class PlayingCardEnum implements CardEnum
     public static final CardEnum JC_CARDSYMBOL_VAL3 = new PlayingCardEnum(302);
     /** Card value (forth card placement/symbol image value - blank). */
     public static final CardEnum JC_CARDSYMBOL_VAL4 = new PlayingCardEnum(303);
-	/** Card value (forth card placement/symbol image value - club). */
+    /** Card value (fifth card placement/symbol image value - club). */
     public static final CardEnum JC_CARDSYMBOL_VAL5 = new PlayingCardEnum(304);
-	/** Card value (forth card placement/symbol image value - diamond). */
+    /** Card value (sixth card placement/symbol image value - diamond). */
     public static final CardEnum JC_CARDSYMBOL_VAL6 = new PlayingCardEnum(305);
-	/** Card value (forth card placement/symbol image value - heart). */
+    /** Card value (seventh card placement/symbol image value - heart). */
     public static final CardEnum JC_CARDSYMBOL_VAL7 = new PlayingCardEnum(306);
-	/** Card value (forth card placement/symbol image value - spade). */
+    /** Card value (eighth card placement/symbol image value - spade). */
     public static final CardEnum JC_CARDSYMBOL_VAL8 = new PlayingCardEnum(307);
 
     // joker values

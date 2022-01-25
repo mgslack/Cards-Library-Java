@@ -254,7 +254,7 @@ public class CardHand
             }
             else {
                 cards[idx] = card; // replace it...
-				numCards++; // remove decremented card count
+                numCards++; // remove decremented card count
             }
         }
 
