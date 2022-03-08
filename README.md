@@ -14,6 +14,14 @@ card decks in addition to playing cards, which it has an implementation of.  The
 C# Playing Card assembly created by me was based off of this library, though made
 less generic and only implemented the playing cards portion.
 
+Added a new card implementation to demonstrate how to use the card classes with a
+non-playing card implementation.  Currently, default is to build both card
+implementations into the main jar.  Added new Ant target to split up the jars and
+place the new card implementation into a separate jar.  Also, realized the card image
+cache class had to be abstracted and extended because the bulk of it could be used for
+new card implementations.  Because of this, the method signature changed and any
+programs already using the cards.jar library will need to be recompiled.
+
 From original readme:
 
 The cards.jar contains several classes and lots of images that emulate playing

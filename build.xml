@@ -17,6 +17,12 @@
 
   <!-- name of the distribution jar -->
   <property name="jarname" value="cards"/>
+  
+  <!-- name of the split off MS cards dist jar -->
+  <property name="msjarname" value="mscards"/>
+  
+  <!-- name of temporary dir to use for splitting jars -->
+  <property name="tempdir" value="__temp__"/>
 
   <!-- javadoc destination location -->
   <property name="docs" value="docs"/>
@@ -57,7 +63,7 @@
          basedir="${build}"/>
     <zip destfile="${dist}/lib/${jarname}.jar"
          update="true"
-         includes="**/*.properties,**/*.gif"
+         includes="**/*.properties,**/*.gif,**/*.bmp"
          basedir="${basedir}/${src}"/>
     <copy file="${dist}/lib/${jarname}.jar" todir="${basedir}" overwrite="true"/>
   </target>
@@ -72,6 +78,26 @@
   <target name="buildclean" description="Build, then clean up">
     <antcall target="dist"/>
     <antcall target="clean"/>
+  </target>
+
+  <!-- split off MS cards into new jar, remove from dist jar -->
+  <target name="check-jar">
+    <available file="${basedir}/${jarname}.jar" property="jar.present"/>
+  </target>
+  <target name="splitms" description="Split out MS cards in separate jar" depends="check-jar" if="jar.present">
+    <unzip src="${basedir}/${jarname}.jar" dest="${tempdir}" overwrite="true"/>
+    <delete dir="${tempdir}/com/slackandassociates/cards/playingcards"/>
+    <delete>
+      <fileset dir="${tempdir}/com/slackandassociates/cards" includes="*.class"/>
+    </delete>
+    <zip destfile="${tempdir}/${msjarname}.jar" basedir="${tempdir}"/>
+    <copy file="${tempdir}/${msjarname}.jar" todir="${basedir}" overwrite="true"/>
+    <delete dir="${tempdir}"/>
+    <unzip src="${basedir}/${jarname}.jar" dest="${tempdir}" overwrite="true"/>
+    <delete dir="${tempdir}/com/slackandassociates/cards/milestonecards"/>
+	<zip destfile="${tempdir}/${jarname}.jar" basedir="${tempdir}"/>
+    <copy file="${tempdir}/${jarname}.jar" todir="${basedir}" overwrite="true"/>
+    <delete dir="${tempdir}"/>
   </target>
 
   <!-- create documentation from source -->
