@@ -69,7 +69,7 @@ public class MilestoneCardDeck
         MilestoneCardEnum.ROLL, MilestoneCardEnum.ROLL,
         MilestoneCardEnum.EXTRA_TANK, MilestoneCardEnum.PERMANENT_TIRE,
         MilestoneCardEnum.DRIVING_ACE, MilestoneCardEnum.RIGHT_OF_WAY,
-		MilestoneCardEnum.M200, MilestoneCardEnum.M200, MilestoneCardEnum.M200, MilestoneCardEnum.M200,
+        MilestoneCardEnum.M200, MilestoneCardEnum.M200, MilestoneCardEnum.M200, MilestoneCardEnum.M200,
         MilestoneCardEnum.M100, MilestoneCardEnum.M100, MilestoneCardEnum.M100, MilestoneCardEnum.M100,
         MilestoneCardEnum.M100, MilestoneCardEnum.M100, MilestoneCardEnum.M100, MilestoneCardEnum.M100,
         MilestoneCardEnum.M100, MilestoneCardEnum.M100, MilestoneCardEnum.M100, MilestoneCardEnum.M100,

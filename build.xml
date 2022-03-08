@@ -50,7 +50,7 @@
   <!-- compile the source into the 'build' location -->
   <target name="compile" description="Compile Card library sources" depends="init">
     <mkdir dir="${build}"/>
-	<!-- removed: source="1.3" target="1.3" -->
+    <!-- removed: source="1.3" target="1.3" -->
     <javac destdir="${build}" srcdir="${src}" classpathref="lib.path" nowarn="true" includeAntRuntime="false"/>
   </target>
 
@@ -95,7 +95,7 @@
     <delete dir="${tempdir}"/>
     <unzip src="${basedir}/${jarname}.jar" dest="${tempdir}" overwrite="true"/>
     <delete dir="${tempdir}/com/slackandassociates/cards/milestonecards"/>
-	<zip destfile="${tempdir}/${jarname}.jar" basedir="${tempdir}"/>
+    <zip destfile="${tempdir}/${jarname}.jar" basedir="${tempdir}"/>
     <copy file="${tempdir}/${jarname}.jar" todir="${basedir}" overwrite="true"/>
     <delete dir="${tempdir}"/>
   </target>

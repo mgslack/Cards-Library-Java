@@ -68,7 +68,7 @@ public class MilestoneCardEnum implements CardEnum
     public static final CardEnum M25 = new MilestoneCardEnum(MilestoneCard.JMC_M25);
 
     // card image values (backs / placeholder graphics)
-	/** Card value (blank card, if needed), colored squares. */
+    /** Card value (blank card, if needed), colored squares. */
     public static final CardEnum JMC_BLANK = new MilestoneCardEnum(MilestoneCard.JMC_EMPTY_CARD);
     /** Card value (players cards spot - placeholder), x w/purple strips. */
     public static final CardEnum JMC_PLAYERS_PLACEHOLDER = new MilestoneCardEnum(20);

@@ -32,9 +32,9 @@ public class PlayingCardImageCache extends CardImageCache
 {
     // private statics
     /** Path in 'jar' to images. */
-    public static final String CIC_PATH = "/com/slackandassociates/cards/playingcards/images/";
+    private static final String CIC_PATH = "/com/slackandassociates/cards/playingcards/images/";
     /** Image extension. */
-    public static final String CIC_EXT = ".gif";
+    private static final String CIC_EXT = ".gif";
 
     // private references
     /** Hashtable containing the cached images. */

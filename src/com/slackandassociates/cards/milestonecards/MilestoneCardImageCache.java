@@ -24,9 +24,9 @@ public class MilestoneCardImageCache extends CardImageCache
 {
     // private statics
     /** Path in 'jar' to images. */
-    public static final String CIC_PATH = "/com/slackandassociates/cards/milestonecards/images/";
+    private static final String CIC_PATH = "/com/slackandassociates/cards/milestonecards/images/";
     /** Image extension. */
-    public static final String CIC_EXT = ".bmp";
+    private static final String CIC_EXT = ".bmp";
 
     // public statics
     /** Width of card images (in pixels). */
@@ -34,7 +34,7 @@ public class MilestoneCardImageCache extends CardImageCache
     /** Height of card images (in pixels). */
     public static final int IMAGE_HEIGHT = 90;
     /** Good offset value to use when laying cards on top of each other (in pixels). */
-    public static final int IMAGE_OFFSET = 15;
+    public static final int IMAGE_OFFSET = 12;
 
     // --------------------------- Constructors -------------------------------
 

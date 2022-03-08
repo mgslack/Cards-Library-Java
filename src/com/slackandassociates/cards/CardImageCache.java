@@ -30,10 +30,10 @@ public abstract class CardImageCache
     private HashMap cardCache = new HashMap(INIT_CACHE_SIZE);
     /** Cache loaded flag. */
     private boolean bImagesLoaded = false;
-	/** Path to image to be loaded. */
-	private String imgPath = "";
-	/** Image extension of image to be loaded. */
-	private String imgExt = "";
+    /** Path to image to be loaded. */
+    private String imgPath = "";
+    /** Image extension of image to be loaded. */
+    private String imgExt = "";
 
     // ------------------------- Constructors -------------------------------
 
@@ -63,8 +63,8 @@ public abstract class CardImageCache
     */
     protected CardImageCache(boolean bLoadNow, String imagePath, String imageExt)
     {
-		if (imagePath != null) imgPath = imagePath;
-		if (imageExt != null) imgExt = imageExt;
+        if (imagePath != null) imgPath = imagePath;
+        if (imageExt != null) imgExt = imageExt;
         if (bLoadNow) loadImageCache();
     }
 
