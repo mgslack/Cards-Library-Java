@@ -145,11 +145,11 @@ public class MilestoneCard implements Card
     /**
      * Method used to return the type of the Milestone card.  Milestone cards do
      * not have suits, but use this method to return the card type (JMC_type constant).
-     * @return An int representing the suit of the card value.
+     * @return An int representing the type of the milestone card value.
     */
     public int getCardSuit()
     {
-		int typ = JMC_INVALID_RETURN;
+        int typ = JMC_INVALID_RETURN;
 
         if (cardValue.getValue() >= JMC_OUT_OF_GAS && cardValue.getValue() <= JMC_STOP)
             typ = JMC_HAZARD;
@@ -206,7 +206,9 @@ public class MilestoneCard implements Card
 
     /**
      * Method used to set the comparison mode (used by the compareTo method)
-     * for the Card instance.  Any value sent in is ignored.
+     * for the Card instance.  Milestone cards do not allow for any other value
+     * than Card.JC_COMP_DEFAULT, so any value sent in is ignored (comp mode not
+     * changed).
      * @param iCompModeFlag int flag specifying one of the Card.JC_COMP_xxx constants.
     */
     public void setCompMode(int iCompModeFlag)
