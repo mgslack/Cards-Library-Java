@@ -8,7 +8,29 @@
   For a game of milestone, hand sizes are 7 cards (unsorted).  On each each turn,
   a player will play into their or opponents speed / battle piles, in one of their
   4 safety spots or discard, then draw a card from the deck, if any left.  Game
-  round continues till all cards are played or discarded.
+  round continues till all cards are played or discarded.<br>
+  Example code using Milestone card implementation:
+  <pre>
+  {@code
+   // setup milestone card deck
+   CardDeck cards = new CardDeck(MilestoneCardDeck.PC_DECK, MilestoneCard.class);
+   cards.shuffle();
+   ...
+   // create hands (only 2 hands) - 7 cards, should be stored unsorted
+   CardHand[] hands = new CardHand[2];
+   for (int i = 0; i < 2; i++) hands[i] = new CardHand(7, false);
+   ...
+   // deal out hands
+   for (int i = 0; i < 7; i++)
+       for (int j = 0; j < 2; j++) hands[j].add(cards.getNextCard());
+   ...
+   // play out game using methods from CardHand and CardDeck
+   hands[i].removeAll();
+   hands[i].remove(idx);
+   hands[i].cardAt(idx);
+   etc.
+  }
+  </pre>
  </body>
 </html>
 
